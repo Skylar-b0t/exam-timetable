@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kericho National Polytechnic - Jan-April 2025 End Term Assesement Trainee Timetables</title>
+    <link rel="icon" href="kerichopoly.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-top: 20px;
+        }
+        .navbar {
+            background-color: #b61ea9;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            background-image: url('bg-rre.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .timetable-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .timetable-list li {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .timetable-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .timetable-list li span {
+            font-weight: bold;
+            color: #555;
+        }
+        .timetable-list li a {
+            text-decoration: none;
+            color: #b61ea9;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 1px solid #b61ea9;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .timetable-list li a:hover {
+            background-color: #b61ea9;
+            color: #fff;
+        }
+        footer {
+            background-color: #b61ea9;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <a href="https://kerichopoly.ac.ke">Home</a>
+            <a href="https://kerichopoly.ac.ke/about-us">About Us</a>
+            <a href="https://kerichopoly.ac.ke/contact-us">Contact Us</a>
+        </div>
+        <div>
+            <a href="https://kerichopoly.ac.ke">Kericho National Polytechnic</a>
+        </div>
+    </div>
+    <div class="banner">
+        Welcome to Kericho National Polytechnic
+    </div>
+    <h1>Jan-April 2025 End Term Assesement Trainee Timetables</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a timetable...">
+    </div>
+    <ul id="timetableList" class="timetable-list"></ul>
+    <script src="/escript.js"></script>
+    <script>
+        // Track and display the number of unique visits
+        const uniqueVisitKey = 'uniqueVisitorId';
+        const uniqueVisitCountKey = 'uniqueVisitCount';
+    
+        // Check if the user is a new visitor
+        let uniqueVisitorId = localStorage.getItem(uniqueVisitKey);
+        if (!uniqueVisitorId) {
+            // Generate a unique ID for the visitor
+            uniqueVisitorId = Date.now().toString();
+            localStorage.setItem(uniqueVisitKey, uniqueVisitorId);
+    
+            // Increment the unique visit count
+            let uniqueVisitCount = localStorage.getItem(uniqueVisitCountKey);
+            uniqueVisitCount = uniqueVisitCount ? parseInt(uniqueVisitCount) + 1 : 1;
+            localStorage.setItem(uniqueVisitCountKey, uniqueVisitCount);
+        }
+    
+        // Display the unique visit count in the footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const footer = document.querySelector('footer');
+            const uniqueVisitCount = localStorage.getItem(uniqueVisitCountKey) || 0;
+            const uniqueVisitElement = document.createElement('p');
+            uniqueVisitElement.textContent = `This page has been visited by ${uniqueVisitCount} unique visitors.`;
+            footer.appendChild(uniqueVisitElement);
+        });
+    </script>
+    <footer>
+        <p>&copy; 2025 Kericho National Polytechnic. All rights reserved.</p>
+    </footer>
+</body>
+</html>
